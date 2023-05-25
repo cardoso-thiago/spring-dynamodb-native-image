@@ -1,0 +1,13 @@
+# DynamoDB Spring e Compilação Nativa
+
+Para executar o projeto, acessando a pasta `environment`, executar o comando `docker-compose up` para subir a LocalStack.
+
+Depois de subir a LocalStack, ainda na pasta `environment` executar o script `create_table.sh`.
+
+Voltando para a pasta raiz, executar o comando `mvn -Pnative spring-boot:build-image`.
+
+Depois da execução com sucesso, executar o comando `docker run -p 8080:8080 docker.io/library/spring-dynamodb-native-image:0.0.1-SNAPSHOT`
+
+Erro: Defining hidden classes at runtime is not supported.
+Possível correção: Implementar StaticTableSchema
+Há uma issue aberta para uma possível correção desse problema.
